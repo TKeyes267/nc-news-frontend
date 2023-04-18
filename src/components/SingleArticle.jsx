@@ -44,17 +44,19 @@ const SingleArticle = () => {
             </ul>
             <ul className="Comments">
               <h2>Comments</h2>
-              {comments.map((comment) => {
-                return (
-                  <li key={comment.comment_id}>
-                    <div>
-                      <h3>{comment.author}</h3>
-                      <p>{comment.body}</p>
-                      <p>Votes: {comment.votes}</p>
-                    </div>
-                  </li>
-                );
-              })}
+              {comments
+                ? comments.map((comment) => {
+                    return (
+                      <li key={comment.comment_id}>
+                        <div>
+                          <h3>{comment.author}</h3>
+                          <p>{comment.body}</p>
+                          <p>Votes: {comment.votes}</p>
+                        </div>
+                      </li>
+                    );
+                  })
+                : null}
             </ul>
           </div>
         )}

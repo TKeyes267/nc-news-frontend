@@ -75,8 +75,8 @@
 }
 
 .ArticleList img {
-  width: 40vw;
-  border: 2px solid #2e8b57;
+  max-width: 40vw;
+  border: 2px solid #9ee7b6;
 }
 
 .ArticleList li {
@@ -97,20 +97,21 @@
 }
 
 .Article ul img {
-  max-width: 80%;
-  border: 2px solid #2e8b57;
+  max-width: 80vw;
+  border: 2px solid #9ee7b6;
 }
 
 .Comments {
   background-color: #0e2c1d;
-  color: #9ee7b6;
+  color: white;
+  border-top: 10px solid #2e8b57;
 }
 .Comments li {
   display: grid;
   grid-template-columns: auto;
   padding: 35px;
 
-  border: 2px solid #2e8b57;
+  border: 1px solid #2e8b57;
   border-spacing: 35px;
   border-radius: 1%;
   margin: 20px auto;
