@@ -16,16 +16,16 @@ const ArticleList = () => {
 
   return (
     <main className="ArticleList">
-      <h2>ARTICLES</h2>
+      <h2>Articles</h2>
       <ul>
         {isLoading ? (
-          <li>Loading</li>
+          <li>Loading...</li>
         ) : (
           articles.map((article) => {
             return (
               <li key={article.article_id}>
                 <div>
-                  <p>{article.title}</p>
+                  <h3>{article.title}</h3>
                   <p>By {article.author}</p>
                   <Link to={`/articles/${article.article_id}`}>
                     <img src={article.article_img_url} />
