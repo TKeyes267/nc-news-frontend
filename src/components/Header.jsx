@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <main className="App-header">
       <h1> NC News </h1>
-      <nav className="Nav">
-        <ul>
+      <nav>
+        <ul className="Nav">
           <li>
             <Link to="/articles">Home</Link>
           </li>

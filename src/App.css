@@ -1,27 +1,27 @@
 .App {
-  text-align: center;
   min-height: 100vh;
   color: seagreen;
   background-color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .App-header {
   background-color: seagreen;
   min-height: 10vh;
   font-size: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: white;
-  padding-left: 10%;
+  padding-left: 35px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
+
+/* Nav Bar */
 
 .Nav {
   display: inline-block;
@@ -36,8 +36,8 @@
 
 .Nav li {
   display: inline-block;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding-right: 35px;
+  padding-bottom: 35px;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -45,21 +45,48 @@
 
 .Nav li:hover:not(.active) {
   background-color: white;
+  color: #000;
 }
 .active {
-  background-color: white;
+  background-color: seagreen;
+  color: black;
 }
 
-.ArticleList li {
+/* Article List */
+
+.ArticleList {
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  list-style-type: none;
   line-height: 1.5;
+}
+
+.ArticleList h2 {
+  text-align: left;
+  margin: 35px;
 }
 
 .ArticleList img {
   width: 40vw;
 }
 
-.ArticleList li p {
+.ArticleList li {
+  list-style-type: none;
+}
+
+/* Single Article */
+
+.Article li {
+  list-style-type: none;
+}
+
+.Article ul {
   text-align: left;
+  list-style-type: none;
+  line-height: 1.5;
+  padding: 10%;
+}
+
+.Article ul img {
+  max-width: 80%;
 }
