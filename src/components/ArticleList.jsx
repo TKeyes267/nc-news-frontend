@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getArticles } from "../Api";
+import { getArticles, getComments } from "../Api";
 import { useParams, Link } from "react-router-dom";
 
 const ArticleList = () => {
