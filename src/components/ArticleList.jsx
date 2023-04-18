@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../Api";
+import { useParams, Link } from "react-router-dom";
 
-const ArticleList = ({ articles, setArticles }) => {
+const ArticleList = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles().then((res) => {
-      setArticles(res.articles);
+    getArticles().then((data) => {
+      setArticles(data);
       setIsLoading(false);
     });
   }, []);
@@ -23,9 +25,11 @@ const ArticleList = ({ articles, setArticles }) => {
             return (
               <li key={article.article_id}>
                 <div>
-                  <p>{article.author}</p>
                   <p>{article.title}</p>
-                  <img src={article.article_img_url} />
+                  <p>By {article.author}</p>
+                  <Link to={`/articles/${article.article_id}`}>
+                    <img src={article.article_img_url} />
+                  </Link>
                 </div>
               </li>
             );

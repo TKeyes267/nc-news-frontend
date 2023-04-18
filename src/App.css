@@ -63,3 +63,18 @@
 .ArticleList li p {
   text-align: left;
 }
+
+.Article {
+  height: 100%;
+}
+
+.Article ul {
+  text-align: left;
+  list-style-type: none;
+  line-height: 1.5;
+  padding: 10%;
+}
+
+.Article ul img {
+  max-width: 80%;
+}
