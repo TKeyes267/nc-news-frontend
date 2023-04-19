@@ -3855,8 +3855,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 34,
             "point": [
-              683.88,
-              -285.18
+              457.91,
+              -161.94
             ],
             "rotation": 0,
             "text": "To Be Added -",
@@ -3865,7 +3865,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 3.6235625810081498,
+              "scale": 2.60309942601353,
               "font": "script",
               "textAlign": "middle"
             }
@@ -3877,8 +3877,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 35,
             "point": [
-              622.75,
-              -107.07
+              405.57,
+              -33.99
             ],
             "rotation": 0,
             "text": "Add a user - needs user POST on API",
@@ -3887,7 +3887,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 2.1114835470290725,
+              "scale": 1.5168501954723184,
               "font": "script",
               "textAlign": "middle"
             }
@@ -3899,8 +3899,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 36,
             "point": [
-              620.53,
-              -12.95
+              403.67,
+              33.62
             ],
             "rotation": 0,
             "text": "Add a topic - needs topic POST on API",
@@ -3909,7 +3909,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 2.1114835470290725,
+              "scale": 1.5168501954723184,
               "font": "script",
               "textAlign": "middle"
             }
@@ -4375,8 +4375,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 56,
             "point": [
-              620.32,
-              71.47
+              403.49,
+              94.27
             ],
             "rotation": 0,
             "text": "Add a article - needs article POST on API",
@@ -4385,7 +4385,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 2.1114835470290725,
+              "scale": 1.5168501954723184,
               "font": "script",
               "textAlign": "middle"
             }
@@ -4397,8 +4397,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 57,
             "point": [
-              613.55,
-              159.1
+              397.69,
+              157.22
             ],
             "rotation": 0,
             "text": "Add a comment upvote - needs comment PATCH on API",
@@ -4407,7 +4407,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 2.1114835470290725,
+              "scale": 1.5168501954723184,
               "font": "script",
               "textAlign": "middle"
             }
@@ -6949,8 +6949,8 @@
             "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
             "childIndex": 139,
             "point": [
-              615.47,
-              243.61
+              399.34,
+              217.93
             ],
             "rotation": 0,
             "text": "Add the votes to the article list",
@@ -6959,7 +6959,7 @@
               "size": "small",
               "isFilled": false,
               "dash": "draw",
-              "scale": 2.2071395091341137,
+              "scale": 1.5855676453531282,
               "font": "script",
               "textAlign": "middle"
             }
@@ -7346,6 +7346,60 @@
               "font": "script",
               "textAlign": "middle"
             }
+          },
+          "bac807f3-a8ff-45ed-0714-a25753f4d39d": {
+            "id": "bac807f3-a8ff-45ed-0714-a25753f4d39d",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "5de69f10-0fb3-4602-3c2b-fda156a93865",
+            "childIndex": 152,
+            "point": [
+              384.99,
+              249.35
+            ],
+            "rotation": 0,
+            "bend": -0.00002076041028384086,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  1.21
+                ],
+                "canBind": true
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  482.89,
+                  0
+                ],
+                "canBind": true
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  241.45,
+                  0.61
+                ]
+              }
+            },
+            "decorations": {},
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
           }
         },
         "bindings": {
