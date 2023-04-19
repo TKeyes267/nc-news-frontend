@@ -8,7 +8,6 @@ const ArticleVote = ({ votes, article_id, error }) => {
     const value = 1;
     setVoteChange((currentVotes) => currentVotes + 1);
     patchVotes(article_id, value).catch((error) => {
-      console.log(error);
       setVoteChange(0);
     });
   };
@@ -16,7 +15,6 @@ const ArticleVote = ({ votes, article_id, error }) => {
     const value = -1;
     setVoteChange((currentVotes) => currentVotes - 1);
     patchVotes(article_id, value).catch((error) => {
-      console.log(error);
       setVoteChange(0);
     });
   };
