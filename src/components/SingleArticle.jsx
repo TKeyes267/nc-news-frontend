@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById, getComments } from "../Api";
+import ArticleVote from "./ArticleVote";
+import moment from "moment";
 
 const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +22,6 @@ const SingleArticle = () => {
         getComments(article_id).then((data) => {
           setComments(data);
           setIsLoading(false);
-          console.log(data);
         });
       });
   }, [article_id]);
@@ -35,12 +36,17 @@ const SingleArticle = () => {
         ) : (
           <div>
             <ul>
+              <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
               <img src={article.article_img_url} />
               <h2>{article.title}</h2>
               <h3>By {article.author}</h3>
-              <p>{article.created_at}</p>
-              <p>Votes: {article.votes}</p>
               <p>{article.body}</p>
+
+              <ArticleVote
+                votes={article.votes}
+                article_id={article.article_id}
+                error={error}
+              />
             </ul>
             <ul className="Comments">
               <h2>Comments</h2>
