@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById, getComments } from "../Api";
 import ArticleVote from "./ArticleVote";
 import moment from "moment";
+import NewComment from "./NewComment";
 
 const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +42,8 @@ const SingleArticle = () => {
               <h2>{article.title}</h2>
               <h3>By {article.author}</h3>
               <p>{article.body}</p>
-
+              <br></br>
+              <br></br>
               <ArticleVote
                 votes={article.votes}
                 article_id={article.article_id}
@@ -50,6 +52,9 @@ const SingleArticle = () => {
             </ul>
             <ul className="Comments">
               <h2>Comments</h2>
+              <br></br>
+              <NewComment setComments={setComments} article_id={article_id} />
+              <br></br>
               {comments
                 ? comments.map((comment) => {
                     return (
