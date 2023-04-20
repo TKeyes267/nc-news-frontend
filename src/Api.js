@@ -29,3 +29,14 @@ export const patchVotes = (article_id, value) => {
       return data.article;
     });
 };
+
+export const postComment = (article_id, body, username) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, {
+      body: body,
+      username: username,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

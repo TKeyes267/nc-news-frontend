@@ -51,6 +51,7 @@ a:hover {
   padding-bottom: 10px;
   color: #2e8b57;
   text-align: center;
+  font-size: large;
 }
 
 .Nav li:hover:not(.active) {
@@ -134,4 +135,13 @@ a:hover {
   color: #0e2c1d;
   border: 1px solid #2e8b57;
   border-radius: 5%;
+}
+
+textarea {
+  color: #0e2c1d;
+  background-color: white;
+  box-sizing: border-box;
+  border: 1px solid #2e8b57;
+  height: 5rem;
+  width: 100%;
 }
