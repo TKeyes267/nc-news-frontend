@@ -4,8 +4,11 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-zypp.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return newsApi.get("/articles").then(({ data }) => {
+export const getArticles = (topic) => {
+  let path = `/articles`;
+  if (topic) path += `?topic=${topic}`;
+
+  return newsApi.get(path).then(({ data }) => {
     return data.articles;
   });
 };
