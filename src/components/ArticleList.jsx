@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
 import { getArticles, getComments } from "../Api";
-import { useParams, Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import Topics from "./Topics";
 
 const ArticleList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [searchParams] = useSearchParams();
+
+  const topic = searchParams.get("topic");
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles().then((data) => {
+
+    getArticles(topic).then((data) => {
       setArticles(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [topic]);
 
   return (
     <main className="ArticleList">
-      <h2>Articles</h2>
+      <Topics setArticles={setArticles} />
       <ul>
         {isLoading ? (
           <li>Loading...</li>
@@ -24,13 +29,13 @@ const ArticleList = () => {
           articles.map((article) => {
             return (
               <li key={article.article_id}>
-                <div>
+                <div className="ArticleCard">
                   <h3>{article.title}</h3>
                   <p>By {article.author}</p>
-                  <Link to={`/articles/${article.article_id}`}>
-                    <img src={article.article_img_url} />
-                  </Link>
                 </div>
+                <Link to={`/articles/${article.article_id}`}>
+                  <img src={article.article_img_url} />
+                </Link>
               </li>
             );
           })

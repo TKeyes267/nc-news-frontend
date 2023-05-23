@@ -16,7 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/articles" element={<ArticleList />} />
-          <Route path="/topics" element={<Topics />} />
+          <Route path="/topics/:topic" element={<Topics />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/user" element={<User />} />
           <Route path="/" element={<Login />} />
