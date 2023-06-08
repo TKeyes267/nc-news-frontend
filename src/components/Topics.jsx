@@ -4,19 +4,24 @@ import { getArticles } from "../Api";
 
 const Topics = () => {
   return (
-    <nav className="TopicsNav">
-      <ul>
-        <li>
-          <Link to={`/articles?topic=coding`}>Coding</Link>
-        </li>
-        <li>
-          <Link to={`/articles?topic=football`}>Football</Link>
-        </li>
-        <li>
-          <Link to={`/articles?topic=cooking`}>Cooking</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="TopicsNav">
+        <ul>
+          <li>
+            <Link to={`/articles`}>Home</Link>
+          </li>
+          <li>
+            <Link to={`/articles?topic=coding`}>Coding</Link>
+          </li>
+          <li>
+            <Link to={`/articles?topic=football`}>Football</Link>
+          </li>
+          <li>
+            <Link to={`/articles?topic=cooking`}>Cooking</Link>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
 

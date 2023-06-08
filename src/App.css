@@ -90,6 +90,17 @@
   text-align: center;
   width: 90vw;
 }
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  width: 150px;
+  height: 3 20px;
+  padding-left: 5%;
+}
 /* Topics Nav Bar */
 
 .TopicsNav {
@@ -102,7 +113,7 @@
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  max-height: 4vh;
+  max-height: 10vh;
   min-width: 100vw;
 }
 
@@ -149,8 +160,6 @@
   border-top: 10px solid #2e8b57;
 }
 .Comments li {
-  display: grid;
-  grid-template-columns: auto;
   padding: 35px;
 
   border: 1px solid #2e8b57;
