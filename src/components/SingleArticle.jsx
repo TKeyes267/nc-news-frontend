@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById, getComments } from "../Api";
+import { getArticleById, getComments, deleteComment } from "../Api";
 import ArticleVote from "./ArticleVote";
 import moment from "moment";
 import NewComment from "./NewComment";
+import DeleteComment from "./DeleteComment";
 
 const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,6 +12,7 @@ const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
   const [error, setError] = useState(null);
+  const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -53,7 +55,12 @@ const SingleArticle = () => {
             <ul className="Comments">
               <h2>Comments</h2>
               <br></br>
-              <NewComment setComments={setComments} article_id={article_id} />
+              <NewComment
+                setComments={setComments}
+                article_id={article_id}
+                setSuccessMsg={setSuccessMsg}
+                successMsg={successMsg}
+              />
               <br></br>
               {comments
                 ? comments.map((comment) => {
@@ -64,6 +71,13 @@ const SingleArticle = () => {
                           <p>{comment.body}</p>
                           <p>Votes: {comment.votes}</p>
                         </div>
+                        <DeleteComment
+                          comment_id={comment.comment_id}
+                          comments={comments}
+                          setComments={setComments}
+                          setSuccessMsg={setSuccessMsg}
+                          successMsg={successMsg}
+                        />
                       </li>
                     );
                   })

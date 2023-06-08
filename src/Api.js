@@ -4,11 +4,14 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-zypp.onrender.com/api",
 });
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, sort_by, order) => {
   let path = `/articles`;
   if (topic) path += `?topic=${topic}`;
+  if (sort_by) path += `?sort_by=${sort_by}`;
+  if (order) path += `?order=${order}`;
 
   return newsApi.get(path).then(({ data }) => {
+    console.log(data.articles);
     return data.articles;
   });
 };
@@ -42,4 +45,10 @@ export const postComment = (article_id, body, username) => {
     .then(({ data }) => {
       return data;
     });
+};
+
+export const deleteComment = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`).catch((err) => {
+    console.log(err);
+  });
 };

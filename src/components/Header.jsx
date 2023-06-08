@@ -8,15 +8,15 @@ const Header = () => {
       </h1>
       <nav>
         <ul className="Nav">
-          <li>
+          {/* <li>
             <Link to="/articles">Articles</Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to="/">Sign Out</Link>
           </li>
           <li>
             <Link to="/user">User</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </main>

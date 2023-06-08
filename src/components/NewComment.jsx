@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { postComment } from "../Api";
 
-const NewComment = ({ setComments, article_id }) => {
+const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
   const [newCommentBody, setNewCommentBody] = useState("");
-  const [successMsg, setSuccessMsg] = useState("");
+
   const [errorMsg, setErrorMsg] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
@@ -44,6 +44,7 @@ const NewComment = ({ setComments, article_id }) => {
         <button type="submit" disabled={buttonDisabled}>
           Submit
         </button>
+
         <p>{successMsg ? successMsg : null}</p>
       </form>
     </div>
