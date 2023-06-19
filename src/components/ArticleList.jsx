@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { getArticles, getComments } from "../Api";
+import { getArticles } from "../Api";
 import { Link, useSearchParams } from "react-router-dom";
+import moment from "moment";
 import Topics from "./Topics";
 
 const ArticleList = () => {
@@ -31,9 +32,8 @@ const ArticleList = () => {
   }, [topic, sortBy, order]);
 
   return (
-    <main className="ArticleList">
+    <div className="ArticleListBackground">
       <Topics setArticles={setArticles} />
-      <br></br>
       <div className="filter">
         <select
           name="sortList"
@@ -61,26 +61,29 @@ const ArticleList = () => {
           <option value="desc">Descending</option>
         </select>
       </div>
-      <ul>
-        {isLoading ? (
-          <li>Loading...</li>
-        ) : (
-          articles.map((article) => {
-            return (
-              <li key={article.article_id}>
+      <main className="ArticleList">
+        <ul>
+          {isLoading ? (
+            <li>Loading...</li>
+          ) : (
+            articles.map((article) => {
+              return (
                 <div className="ArticleCard">
-                  <h3>{article.title}</h3>
-                  <p>By {article.author}</p>
+                  <Link to={`/articles/${article.article_id}`}>
+                    <li key={article.article_id}>
+                      <h3>{article.title}</h3>
+                      <p>By {article.author}</p>
+                      <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
+                      <img src={article.article_img_url} alt="article cover" />
+                    </li>
+                  </Link>
                 </div>
-                <Link to={`/articles/${article.article_id}`}>
-                  <img src={article.article_img_url} />
-                </Link>
-              </li>
-            );
-          })
-        )}
-      </ul>
-    </main>
+              );
+            })
+          )}
+        </ul>
+      </main>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById, getComments, deleteComment } from "../Api";
+import { getArticleById, getComments } from "../Api";
 import ArticleVote from "./ArticleVote";
 import moment from "moment";
 import NewComment from "./NewComment";
@@ -11,7 +11,7 @@ const SingleArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
@@ -33,17 +33,17 @@ const SingleArticle = () => {
     return <h2>Something went wrong...</h2>;
   } else {
     return (
-      <main className="Article">
+      <main>
         {isLoading ? (
           <li>Loading...</li>
         ) : (
           <div>
-            <ul>
-              <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
-              <img src={article.article_img_url} />
+            <ul className="Article">
               <h2>{article.title}</h2>
               <h3>By {article.author}</h3>
-              <p>{article.body}</p>
+              <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
+              <img src={article.article_img_url} alt="article cover" />
+              <p className="articleBody">{article.body}</p>
               <br></br>
               <br></br>
               <ArticleVote
@@ -71,6 +71,7 @@ const SingleArticle = () => {
                           <p>{comment.body}</p>
                           <p>Votes: {comment.votes}</p>
                         </div>
+                        <br></br>
                         <DeleteComment
                           comment_id={comment.comment_id}
                           comments={comments}

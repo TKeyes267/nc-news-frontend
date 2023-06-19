@@ -4,7 +4,7 @@ import { postComment } from "../Api";
 const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
   const [newCommentBody, setNewCommentBody] = useState("");
 
-  const [errorMsg, setErrorMsg] = useState("");
+  const [setErrorMsg] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const handleSubmit = (event) => {
@@ -31,7 +31,7 @@ const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="commentBox" onSubmit={handleSubmit}>
         <label htmlFor="newComment"> </label>
         <textarea
           id="newComment"
@@ -44,9 +44,8 @@ const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
         <button type="submit" disabled={buttonDisabled}>
           Submit
         </button>
-
-        <p>{successMsg ? successMsg : null}</p>
       </form>
+      <p>{successMsg ? successMsg : null}</p>
     </div>
   );
 };

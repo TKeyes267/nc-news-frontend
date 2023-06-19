@@ -24,8 +24,8 @@ const DeleteComment = ({
 
   return (
     <>
-      <button className="button-subCom floatButton" onClick={deleteCommentByID}>
-        Delete
+      <button className="DeleteButton" onClick={deleteCommentByID}>
+        Delete Comment
       </button>
     </>
   );
