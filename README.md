@@ -20,9 +20,7 @@
 
 # Description
 
-This is a front-end React application which connects to the backend API & database (link above) to aggregate news articles, topics, comments and users.
-
-Built using React.js
+A 'News API' built with Node.js, an Express.js server and a PostgreSQL database.
 
 # How to run this project locally
 
