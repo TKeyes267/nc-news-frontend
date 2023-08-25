@@ -38,14 +38,20 @@ const SingleArticle = () => {
           <li>Loading...</li>
         ) : (
           <div>
+            <div className="ArticleHeader">
+              <h2 className="ArticleName">{article.title}</h2>
+            </div>
+            <img
+              className="ArticleImg"
+              src={article.article_img_url}
+              alt="article cover"
+            />
             <ul className="Article">
-              <h2>{article.title}</h2>
-              <h3>By {article.author}</h3>
-              <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
-              <img src={article.article_img_url} alt="article cover" />
+              <div className="ArticleSubHead">
+                <h3>By {article.author}</h3>
+                <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
+              </div>
               <p className="articleBody">{article.body}</p>
-              <br></br>
-              <br></br>
               <ArticleVote
                 votes={article.votes}
                 article_id={article.article_id}
@@ -53,7 +59,7 @@ const SingleArticle = () => {
               />
             </ul>
             <ul className="Comments">
-              <h2>Comments</h2>
+              <h2 className="CommentHeader">Comments</h2>
               <br></br>
               <NewComment
                 setComments={setComments}
@@ -67,7 +73,7 @@ const SingleArticle = () => {
                     return (
                       <li key={comment.comment_id}>
                         <div>
-                          <h3>{comment.author}</h3>
+                          <h3 className="commentAuthor">{comment.author}</h3>
                           <p>{comment.body}</p>
                           <p>Votes: {comment.votes}</p>
                         </div>

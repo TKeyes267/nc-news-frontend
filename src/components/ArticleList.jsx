@@ -70,10 +70,12 @@ const ArticleList = () => {
               return (
                 <div className="ArticleCard">
                   <Link to={`/articles/${article.article_id}`}>
-                    <li key={article.article_id}>
+                    <div className="ArticleCardHeader">
                       <h3>{article.title}</h3>
                       <p>By {article.author}</p>
                       <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
+                    </div>
+                    <li key={article.article_id}>
                       <img src={article.article_img_url} alt="article cover" />
                     </li>
                   </Link>

@@ -31,16 +31,18 @@ const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
 
   return (
     <div>
-      <form className="commentBox" onSubmit={handleSubmit}>
-        <label htmlFor="newComment"> </label>
-        <textarea
-          id="newComment"
-          value={newCommentBody}
-          onChange={(event) => setNewCommentBody(event.target.value)}
-          rows={6}
-          placeholder="Enter your comment here"
-          required
-        ></textarea>
+      <form className="comment" onSubmit={handleSubmit}>
+        <div className="commentBox">
+          <label htmlFor="newComment"> </label>
+          <textarea
+            id="newComment"
+            value={newCommentBody}
+            onChange={(event) => setNewCommentBody(event.target.value)}
+            rows={6}
+            placeholder="Enter your comment here"
+            required
+          ></textarea>
+        </div>
         <button type="submit" disabled={buttonDisabled}>
           Submit
         </button>
