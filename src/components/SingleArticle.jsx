@@ -30,16 +30,20 @@ const SingleArticle = () => {
   }, [article_id]);
 
   if (error) {
-    return <h2>Something went wrong...</h2>;
+    return (
+      <h2 className="font-poppins m-8 p-8 text-3xl">Something went wrong...</h2>
+    );
   } else {
     return (
-      <main>
+      <main className="bg-plaster flex justify-center w-screen h-screen">
         {isLoading ? (
-          <li>Loading...</li>
+          <h2 className="font-poppins m-8 p-8 text-3xl">Loading...</h2>
         ) : (
-          <div>
-            <div className="ArticleHeader">
-              <h2 className="ArticleName">{article.title}</h2>
+          <div className="bg-alto justify-center mb-8">
+            <div className="bg-concrete p-4 justify-center mb-8">
+              <h2 className="pb-4 text-xl text-plaster font-poppins">
+                {article.title}
+              </h2>
             </div>
             <img
               className="ArticleImg"

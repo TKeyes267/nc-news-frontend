@@ -12,7 +12,7 @@ import SingleArticle from "./components/SingleArticle";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div>
         <Header />
         <Routes>
           <Route path="/articles" element={<ArticleList />} />

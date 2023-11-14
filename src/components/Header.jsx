@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <main className="Header">
-      <h1>
-        <Link to="/articles">Ancoats Post</Link>
-      </h1>
+    <main>
+      <Link to="/articles">
+        <h1 className="bg-concrete text-plaster p-4 text-4xl font-tit">
+          Ancoats Post
+        </h1>
+      </Link>
     </main>
   );
 };
