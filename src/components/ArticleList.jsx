@@ -5,6 +5,8 @@ import moment from "moment";
 import Topics from "./Topics";
 import Filter from "./Filter";
 
+import BarLoader from "react-spinners/BarLoader";
+
 const ArticleList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState([]);
@@ -14,45 +16,41 @@ const ArticleList = () => {
   const [order, setOrder] = useState("");
   const [sortBy, setSortBy] = useState("");
 
-  // const handleOrderByChange = (event) => {
-  //   setOrder(event.target.value);
-  // };
-
-  // const handleSortByChange = (event) => {
-  //   setSortBy(event.target.value);
-  // };
-
   useEffect(() => {
     setIsLoading(true);
 
     getArticles(topic, sortBy, order).then((data) => {
-      console.log(sortBy);
       setArticles(data);
       setIsLoading(false);
     });
   }, [topic, sortBy, order]);
 
-  console.log(articles);
-
   return (
     <main className="">
-      <div className="flex flex-row justify-between bg-alto border-b-4 border-concrete">
+      <div className="flex flex-row justify-between bg-plaster border-b-4 border-concrete">
         <Topics setArticles={setArticles} />
         <Filter
           sortBy={sortBy}
           setSortBy={setSortBy}
-          order={order}
-          setOrder={setOrder}
+          // order={order}
+          // setOrder={setOrder}
         />
       </div>
       <main className=" w-screen h-screen">
-        <ul className="bg-plaster flex flex-row flex-wrap justify-between">
+        <ul className="bg-alto flex flex-row flex-wrap justify-between items-center">
           {isLoading ? (
-            <h2 className="font-poppins m-8 p-8 text-3xl">Loading...</h2>
+            <BarLoader
+              color="#2C2C2C"
+              loading={isLoading}
+              width={1550}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+              className=""
+            />
           ) : (
             articles.map((article) => {
               return (
-                <div className="bg-alto border-4 border-concrete xl:w-[310px] lg:w-[250px] m-8 flex flex-wrap hover:scale-105 hover:shadow-xl shadow-tar">
+                <div className="bg-alto border-2 border-concrete xl:w-[310px] lg:w-[250px] m-8 h-[400px] flex flex-wrap hover:scale-105 hover:shadow-xl shadow-tar">
                   <Link
                     to={`/articles/${article.article_id}`}
                     className="flex flex-col justify-between bg-concrete"
@@ -99,7 +97,7 @@ const ArticleList = () => {
                         alt="article cover"
                         className="object-cover overflow-hidden h-48 w-96 "
                       />
-                      <div className="flex flex-row justify-between items-center border-t-4 border-concrete">
+                      <div className="flex flex-row justify-between items-center border-t-2 border-concrete">
                         <div className="flex flex-row px-2 items-center ">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +116,7 @@ const ArticleList = () => {
                             {moment(article.created_at).format("MM/DD/YYYY")}
                           </p>
                         </div>
-                        <div className="flex flex-row pl-4 pr-2 bg-concrete items-center border-l-4 border-concrete">
+                        <div className="flex flex-row pl-4 pr-2 bg-concrete items-center border-l-2 border-concrete">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"

@@ -10,7 +10,7 @@ const Topics = () => {
   return (
     <>
       <nav>
-        <ul className="flex flex-row gap-8 mx-4 py-1 bg-alto text-tar">
+        <ul className="flex flex-row gap-8 mx-4 py-1 bg-plaster text-tar">
           <li>
             <Link to={`/`}>
               <h2 className="p-1 hover:bg-concrete hover:text-plaster font-poppins">

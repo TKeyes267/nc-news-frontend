@@ -31,19 +31,24 @@ const NewComment = ({ setComments, article_id, successMsg, setSuccessMsg }) => {
 
   return (
     <div>
-      <form className="comment" onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <div className="commentBox">
           <label htmlFor="newComment"> </label>
           <textarea
             id="newComment"
             value={newCommentBody}
             onChange={(event) => setNewCommentBody(event.target.value)}
-            rows={6}
+            rows={3}
             placeholder="Enter your comment here"
             required
+            className="p-4 w-fit overflow-hidden"
           ></textarea>
         </div>
-        <button type="submit" disabled={buttonDisabled}>
+        <button
+          className="bg-alto text-tar p-1 px-2 my-2 hover:bg-green font-poppins"
+          type="submit"
+          disabled={buttonDisabled}
+        >
           Submit
         </button>
       </form>

@@ -11,7 +11,6 @@ export const getArticles = (topic, sort_by, order) => {
   if (order) path += `?order=${order}`;
 
   return newsApi.get(path).then(({ data }) => {
-    console.log(data.articles);
     return data.articles;
   });
 };

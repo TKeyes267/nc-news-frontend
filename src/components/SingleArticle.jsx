@@ -5,6 +5,7 @@ import ArticleVote from "./ArticleVote";
 import moment from "moment";
 import NewComment from "./NewComment";
 import DeleteComment from "./DeleteComment";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,68 +36,50 @@ const SingleArticle = () => {
     );
   } else {
     return (
-      <main className="bg-plaster flex justify-center w-screen h-screen">
-        {isLoading ? (
-          <h2 className="font-poppins m-8 p-8 text-3xl">Loading...</h2>
-        ) : (
-          <div className="bg-alto justify-center mb-8">
-            <div className="bg-concrete p-4 justify-center mb-8">
-              <h2 className="pb-4 text-xl text-plaster font-poppins">
-                {article.title}
-              </h2>
-            </div>
-            <img
-              className="ArticleImg"
-              src={article.article_img_url}
-              alt="article cover"
-            />
-            <ul className="Article">
-              <div className="ArticleSubHead">
-                <h3>By {article.author}</h3>
-                <p>{moment(article.created_at).format("MMMM Do YYYY")}</p>
+      <div className="bg-concrete pb-16">
+        <div className="bg-alto flex justify-center lg:px-40 px-4 ">
+          {isLoading ? (
+            <h2 className="font-poppins mx-8 px-8 text-3xl">Loading...</h2>
+          ) : (
+            <div className="bg-alto pb-8 flex-col justify-center ">
+              <div className="bg-concrete p-4 justify-center mt-8 flex md:flex-row flex-col">
+                <div className="mr-8">
+                  <h2 className="text-2xl md:text-6xl text-alto font-poppins mb-8 md:leading-[5rem]">
+                    {article.title}
+                  </h2>
+                  <h3 className="text-alto font-poppins">
+                    By {article.author}
+                  </h3>
+                  <p className="text-alto font-poppins pb-4">
+                    {moment(article.created_at).format("MM/DD/YYYY")}
+                  </p>
+                </div>
+                <img
+                  className="object-contain lg:w-[800px]"
+                  src={article.article_img_url}
+                  alt="article image"
+                />
               </div>
-              <p className="articleBody">{article.body}</p>
+              <p className="text-tar bg-plaster p-4 text:md lg:text-2xl font-poppins antialiased leading-loose border-2 border-concrete">
+                {article.body}
+              </p>
+
               <ArticleVote
                 votes={article.votes}
                 article_id={article.article_id}
                 error={error}
               />
-            </ul>
-            <ul className="Comments">
-              <h2 className="CommentHeader">Comments</h2>
-              <br></br>
-              <NewComment
-                setComments={setComments}
-                article_id={article_id}
-                setSuccessMsg={setSuccessMsg}
-                successMsg={successMsg}
-              />
-              <br></br>
-              {comments
-                ? comments.map((comment) => {
-                    return (
-                      <li key={comment.comment_id}>
-                        <div>
-                          <h3 className="commentAuthor">{comment.author}</h3>
-                          <p>{comment.body}</p>
-                          <p>Votes: {comment.votes}</p>
-                        </div>
-                        <br></br>
-                        <DeleteComment
-                          comment_id={comment.comment_id}
-                          comments={comments}
-                          setComments={setComments}
-                          setSuccessMsg={setSuccessMsg}
-                          successMsg={successMsg}
-                        />
-                      </li>
-                    );
-                  })
-                : null}
-            </ul>
-          </div>
-        )}
-      </main>
+            </div>
+          )}
+        </div>
+        <Comments
+          comments={comments}
+          setComments={setComments}
+          article_id={article_id}
+          setSuccessMsg={setSuccessMsg}
+          successMsg={successMsg}
+        />
+      </div>
     );
   }
 };

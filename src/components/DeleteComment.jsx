@@ -23,11 +23,15 @@ const DeleteComment = ({
   };
 
   return (
-    <>
-      <button className="DeleteButton" onClick={deleteCommentByID}>
+    <div className="bg-alto flex flex-row justify-between ">
+      <div></div>
+      <button
+        className="text-tar px-4 py-2 hover:bg-red hover:text-plaster font-poppins"
+        onClick={deleteCommentByID}
+      >
         Delete Comment
       </button>
-    </>
+    </div>
   );
 };
 export default DeleteComment;

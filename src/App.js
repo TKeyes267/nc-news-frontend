@@ -12,16 +12,14 @@ import SingleArticle from "./components/SingleArticle";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Header />
-        <Routes>
-          <Route path="/articles" element={<ArticleList />} />
-          <Route path="/topics/:topic" element={<Topics />} />
-          <Route path="/articles/:article_id" element={<SingleArticle />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/" element={<Login />} />
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/articles" element={<ArticleList />} />
+        <Route path="/topics/:topic" element={<Topics />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/" element={<Login />} />
+      </Routes>
     </BrowserRouter>
   );
 }

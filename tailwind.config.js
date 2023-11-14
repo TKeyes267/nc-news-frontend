@@ -14,7 +14,15 @@ module.exports = {
       green: "#31B978",
       red: "#B63221",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      backgroundImage: {
+        hero: "url('../src/Assets/images/heroImage.jpg')",
+      },
+    },
   },
   plugins: [require("tw-elements-react/dist/plugin.cjs")],
 };
